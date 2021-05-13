@@ -25,10 +25,10 @@ let seattle = {
     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
   },
   pushSoldArray: function () {
-
-    this.pushSoldArray.push(this.getRandomCookPerHour());
-  }
-};
+    for (let i=0; i < hours.length; i++){
+      this.pushSoldArray.push(this.getRandomCookPerHour());
+    }
+}
 
 console.log(seattle);
 
