@@ -26,7 +26,7 @@ let seattle = {
   },
   pushSoldArray: function () {
     for (let i=0; i < hours.length; i++){
-      this.pushSoldArray.push(this.getRandomCookPerHour());
+      this.pushSoldArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
     }
   }
 };
@@ -35,3 +35,5 @@ console.log(seattle);
 console.log(seattle.getRandomCust());
 console.log(seattle.getRandomCookPerHour());
 console.log(seattle.pushSoldArray());
+
+// WIP Need to resolve liver server issiues before continuing
