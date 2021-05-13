@@ -13,7 +13,15 @@ let seattle = {
   min: 23,
   max: 65,
   dailyTotal: 0,
-  avg: 6.3
+  avg: 6.3,
+  getRandomCust: function () {
+
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+  }
+
+
 };
 
 console.log(seattle);
+
+console.log(seattle.getRandomCust());
