@@ -28,10 +28,10 @@ let seattle = {
     for (let i=0; i < hours.length; i++){
       this.pushSoldArray.push(this.getRandomCookPerHour());
     }
-}
+  }
+};
 
 console.log(seattle);
-
 console.log(seattle.getRandomCust());
 console.log(seattle.getRandomCookPerHour());
 console.log(seattle.pushSoldArray());
