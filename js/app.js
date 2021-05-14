@@ -9,8 +9,6 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 console.log(hours);
 
 const seattleList = document.getElementById('seattle-list');
-// console.log(seattleList);
-
 const tokyoList = document.getElementById('tokyo-list');
 const dubaiList = document.getElementById('dubai-list');
 const parisList = document.getElementById('paris-list');
@@ -228,19 +226,3 @@ paris.render();
 lima.pushSoldArray();
 lima.totalCookSales();
 lima.render();
-
-// console.log(seattle);
-// console.log(seattle.getRandomCust());
-// console.log(seattle.getRandomCookPerHour());
-// console.log(seattle.avgCookSoldEachArray);
-// console.log(seattle.dailyTotal);
-
-
-
-
-
-// // 1. create element
-// let section = document.createElement('section');
-// // 2. give content
-// //3. append to the DOM
-// seattleList.appendChild(section); //POL
