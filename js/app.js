@@ -5,8 +5,11 @@
 console.log('hello');
 
 // created operation hours variable
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 console.log(hours);
+
+const seattleList = document.getElementById('seattle-list');
+console.log(seattleList);
 
 // created seattle object
 let seattle = {
@@ -14,7 +17,7 @@ let seattle = {
   min: 23,
   max: 65,
   dailyTotal: 0,
-  avgCookSoldEachArray : [],
+  avgCookSoldEachArray: [],
   avg: 6.3,
   getRandomCust: function () {
 
@@ -25,15 +28,43 @@ let seattle = {
     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
   },
   pushSoldArray: function () {
-    for (let i=0; i < hours.length; i++){
-      this.pushSoldArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+    for (let i = 0; i < hours.length; i++) {
+      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
     }
+  },
+  totalCookSales: function () {
+    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+      this.dailyTotal += this.avgCookSoldEachArray[i];
+    }
+  },
+  render: function () {
+    for (let i = 0; i < hours.length; i++) {
+      let li = document.createElement('li');
+      li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
+      seattleList.appendChild(li);
+    }
+    let liTotal = document.createElement('li');
+    liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
+    seattleList.appendChild(liTotal);
   }
+
 };
 
+
+
+seattle.pushSoldArray();
+seattle.totalCookSales();
 console.log(seattle);
 console.log(seattle.getRandomCust());
 console.log(seattle.getRandomCookPerHour());
-console.log(seattle.pushSoldArray());
+console.log(seattle.avgCookSoldEachArray);
+console.log(seattle.dailyTotal);
+seattle.render();
 
-// WIP Need to resolve liver server issiues before continuing
+
+
+// 1. create element
+let section = document.createElement('section');
+// 2. give content
+//3. append to the DOM
+seattleList.appendChild(section); //POL
