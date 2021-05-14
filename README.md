@@ -1,10 +1,11 @@
-# LAB - 6
+# Cookie Stand
 
 ## About me
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+Here I will program the continual lab Salmon Cookies
 
 ### Author: J.Matt Miguel
 ### Links and Resources
+  https://jamiguel23.github.io/cookie-stand/ 
 
 * [submission PR](http://xyz.com)
 * Any Links you used as reference
