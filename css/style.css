@@ -6,3 +6,22 @@ main {
   background-color: burlywood;
   
 }
+
+
+table {
+	border-collapse: separate;
+  border-spacing: 5px;
+  border: medium solid white;
+  margin: 25px auto;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid pink;
+  border-radius: 5px;;
+}
+
+th {
+  background-color: pink;
+  font-weight: bold;
+}
