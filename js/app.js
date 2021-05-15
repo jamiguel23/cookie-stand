@@ -15,214 +15,227 @@ const parisList = document.getElementById('paris-list');
 const limaList = document.getElementById('lima-list');
 
 
-// created seattle object
-let seattle = {
-  name: 'Seattle',
-  min: 23,
-  max: 65,
-  dailyTotal: 0,
-  avgCookSoldEachArray: [],
-  avg: 6.3,
-  getRandomCust: function () {
+//create constructor notation for all Stores
+function Store(name, min, max) {
+  this.storeName = name;
+  this.min = min;
+  this.max = max;
+}
+// created seattleStore 
+let seattleStore = new Store('Seattle', 23, 65);
 
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
-  },
-  getRandomCookPerHour: function () {
-
-    return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
-  },
-  pushSoldArray: function () {
-    for (let i = 0; i < hours.length; i++) {
-      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
-    }
-  },
-  totalCookSales: function () {
-    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
-      this.dailyTotal += this.avgCookSoldEachArray[i];
-    }
-  },
-  render: function () {
-    for (let i = 0; i < hours.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
-      seattleList.appendChild(li);
-    }
-    let liTotal = document.createElement('li');
-    liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
-    seattleList.appendChild(liTotal);
-  }
-
-};
-
-let tokyo = {
-  name: 'Tokyo',
-  min: 3,
-  max: 24,
-  dailyTotal: 0,
-  avgCookSoldEachArray: [],
-  avg: 1.2,
-  getRandomCust: function () {
-
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
-  },
-  getRandomCookPerHour: function () {
-
-    return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
-  },
-  pushSoldArray: function () {
-    for (let i = 0; i < hours.length; i++) {
-      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
-    }
-  },
-  totalCookSales: function () {
-    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
-      this.dailyTotal += this.avgCookSoldEachArray[i];
-    }
-  },
-  render: function () {
-    for (let i = 0; i < hours.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
-      tokyoList.appendChild(li);
-    }
-    let liTotal = document.createElement('li');
-    liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
-    tokyoList.appendChild(liTotal);
-  }
-
-};
+//POL
+console.log(seattleStore);
 
 
-let dubai = {
-  name: 'Dubai',
-  min: 11,
-  max: 38,
-  dailyTotal: 0,
-  avgCookSoldEachArray: [],
-  avg: 3.7,
-  getRandomCust: function () {
+// // created seattle object
+// let seattle = {
+//   name: 'Seattle',
+//   min: 23,
+//   max: 65,
+//   dailyTotal: 0,
+//   avgCookSoldEachArray: [],
+//   avg: 6.3,
+//   getRandomCust: function () {
 
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
-  },
-  getRandomCookPerHour: function () {
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+//   },
+//   getRandomCookPerHour: function () {
 
-    return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
-  },
-  pushSoldArray: function () {
-    for (let i = 0; i < hours.length; i++) {
-      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
-    }
-  },
-  totalCookSales: function () {
-    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
-      this.dailyTotal += this.avgCookSoldEachArray[i];
-    }
-  },
-  render: function () {
-    for (let i = 0; i < hours.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
-      dubaiList.appendChild(li);
-    }
-    let liTotal = document.createElement('li');
-    liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
-    dubaiList.appendChild(liTotal);
-  }
+//     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
+//   },
+//   pushSoldArray: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+//     }
+//   },
+//   totalCookSales: function () {
+//     for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+//       this.dailyTotal += this.avgCookSoldEachArray[i];
+//     }
+//   },
+//   render: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       let li = document.createElement('li');
+//       li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
+//       seattleList.appendChild(li);
+//     }
+//     let liTotal = document.createElement('li');
+//     liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
+//     seattleList.appendChild(liTotal);
+//   }
 
-};
+// };
 
-let paris = {
-  name: 'Paris',
-  min: 11,
-  max: 38,
-  dailyTotal: 0,
-  avgCookSoldEachArray: [],
-  avg: 3.7,
-  getRandomCust: function () {
+// let tokyo = {
+//   name: 'Tokyo',
+//   min: 3,
+//   max: 24,
+//   dailyTotal: 0,
+//   avgCookSoldEachArray: [],
+//   avg: 1.2,
+//   getRandomCust: function () {
 
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
-  },
-  getRandomCookPerHour: function () {
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+//   },
+//   getRandomCookPerHour: function () {
 
-    return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
-  },
-  pushSoldArray: function () {
-    for (let i = 0; i < hours.length; i++) {
-      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
-    }
-  },
-  totalCookSales: function () {
-    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
-      this.dailyTotal += this.avgCookSoldEachArray[i];
-    }
-  },
-  render: function () {
-    for (let i = 0; i < hours.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
-      parisList.appendChild(li);
-    }
-    let liTotal = document.createElement('li');
-    liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
-    parisList.appendChild(liTotal);
-  }
+//     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
+//   },
+//   pushSoldArray: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+//     }
+//   },
+//   totalCookSales: function () {
+//     for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+//       this.dailyTotal += this.avgCookSoldEachArray[i];
+//     }
+//   },
+//   render: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       let li = document.createElement('li');
+//       li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
+//       tokyoList.appendChild(li);
+//     }
+//     let liTotal = document.createElement('li');
+//     liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
+//     tokyoList.appendChild(liTotal);
+//   }
 
-};
+// };
 
-let lima = {
-  name: 'Lima',
-  min: 2,
-  max: 16,
-  dailyTotal: 0,
-  avgCookSoldEachArray: [],
-  avg: 4.6,
-  getRandomCust: function () {
 
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
-  },
-  getRandomCookPerHour: function () {
+// let dubai = {
+//   name: 'Dubai',
+//   min: 11,
+//   max: 38,
+//   dailyTotal: 0,
+//   avgCookSoldEachArray: [],
+//   avg: 3.7,
+//   getRandomCust: function () {
 
-    return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
-  },
-  pushSoldArray: function () {
-    for (let i = 0; i < hours.length; i++) {
-      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
-    }
-  },
-  totalCookSales: function () {
-    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
-      this.dailyTotal += this.avgCookSoldEachArray[i];
-    }
-  },
-  render: function () {
-    for (let i = 0; i < hours.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
-      limaList.appendChild(li);
-    }
-    let liTotal = document.createElement('li');
-    liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
-    limaList.appendChild(liTotal);
-  }
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+//   },
+//   getRandomCookPerHour: function () {
 
-};
+//     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
+//   },
+//   pushSoldArray: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+//     }
+//   },
+//   totalCookSales: function () {
+//     for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+//       this.dailyTotal += this.avgCookSoldEachArray[i];
+//     }
+//   },
+//   render: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       let li = document.createElement('li');
+//       li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
+//       dubaiList.appendChild(li);
+//     }
+//     let liTotal = document.createElement('li');
+//     liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
+//     dubaiList.appendChild(liTotal);
+//   }
 
-seattle.pushSoldArray();
-seattle.totalCookSales();
-seattle.render();
+// };
 
-tokyo.pushSoldArray();
-tokyo.totalCookSales();
-tokyo.render();
+// let paris = {
+//   name: 'Paris',
+//   min: 11,
+//   max: 38,
+//   dailyTotal: 0,
+//   avgCookSoldEachArray: [],
+//   avg: 3.7,
+//   getRandomCust: function () {
 
-dubai.pushSoldArray();
-dubai.totalCookSales();
-dubai.render();
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+//   },
+//   getRandomCookPerHour: function () {
 
-paris.pushSoldArray();
-paris.totalCookSales();
-paris.render();
+//     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
+//   },
+//   pushSoldArray: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+//     }
+//   },
+//   totalCookSales: function () {
+//     for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+//       this.dailyTotal += this.avgCookSoldEachArray[i];
+//     }
+//   },
+//   render: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       let li = document.createElement('li');
+//       li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
+//       parisList.appendChild(li);
+//     }
+//     let liTotal = document.createElement('li');
+//     liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
+//     parisList.appendChild(liTotal);
+//   }
 
-lima.pushSoldArray();
-lima.totalCookSales();
-lima.render();
+// };
+
+// let lima = {
+//   name: 'Lima',
+//   min: 2,
+//   max: 16,
+//   dailyTotal: 0,
+//   avgCookSoldEachArray: [],
+//   avg: 4.6,
+//   getRandomCust: function () {
+
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+//   },
+//   getRandomCookPerHour: function () {
+
+//     return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
+//   },
+//   pushSoldArray: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+//     }
+//   },
+//   totalCookSales: function () {
+//     for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+//       this.dailyTotal += this.avgCookSoldEachArray[i];
+//     }
+//   },
+//   render: function () {
+//     for (let i = 0; i < hours.length; i++) {
+//       let li = document.createElement('li');
+//       li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
+//       limaList.appendChild(li);
+//     }
+//     let liTotal = document.createElement('li');
+//     liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
+//     limaList.appendChild(liTotal);
+//   }
+
+// };
+
+// seattle.pushSoldArray();
+// seattle.totalCookSales();
+// seattle.render();
+
+// tokyo.pushSoldArray();
+// tokyo.totalCookSales();
+// tokyo.render();
+
+// dubai.pushSoldArray();
+// dubai.totalCookSales();
+// dubai.render();
+
+// paris.pushSoldArray();
+// paris.totalCookSales();
+// paris.render();
+
+// lima.pushSoldArray();
+// lima.totalCookSales();
+// lima.render();
