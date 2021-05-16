@@ -14,21 +14,67 @@ console.log(hours);
 // const parisList = document.getElementById('paris-list');
 // const limaList = document.getElementById('lima-list');
 
-let hourTotals= [];
+// const cookieTable = document.querySelector('table');
+const cookieTable = document.getElementById('cookie-table');
+console.log(cookieTable);
+
+// let hourTotals = [];
 
 //create constructor notation for all Stores
-function Store(name, min, avgCookSoldEachArray, max) {
-  this.storeName = name;
+function Store(name, min, max, avg) {
+  this.name = name;
   this.min = min;
   this.max = max;
-  this.avgCookSoldEachArray = avgCookSoldEachArray;
-  hourTotals.push(this);
-}
-// created seattleStore
-let seattleStore = new Store('Seattle', 23, [10,15,20], 65);
+  this.avg = avg;
+  this.avgCookSoldEachArray = [];
+  this.dailyTotal = 0;
+  this.getRandomCust = function () {
 
-//POL
-console.log(seattleStore);
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min); //The maximum is inclusive and the minimum is inclusive
+  };
+  this.getRandomCookPerHour = function () {
+
+    return Math.round(this.getRandomCust() * this.avg); // This should find a single average day
+  };
+  this.pushSoldArray = function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.avgCookSoldEachArray.push(this.getRandomCookPerHour()); //for loop to go the length of hours array to assign it a random daily average
+    }
+  };
+  this.totalCookSales = function () {
+    this.pushSoldArray();
+    for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+      this.dailyTotal += this.avgCookSoldEachArray[i];
+    }
+  };
+
+  this.render();
+}
+
+
+
+Store.prototype.render = function () {
+  this.totalCookSales();
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  td.textContent = this.name;
+  tr.appendChild(td);
+
+  for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
+    let td = document.createElement('td');
+    td.textContent = this.avgCookSoldEachArray[i];
+    tr.appendChild(td);
+    // this.hourTotals += this.avgCookSoldEachArray[i];
+  }
+  td = document.createElement('td');
+  td.textContent = this.dailyTotal;
+  tr.appendChild(td);
+  cookieTable.appendChild(tr);
+
+};
+new Store('Seattle', 23, 65, 6.3);
+
+
 
 
 // // created seattle object
@@ -57,16 +103,6 @@ console.log(seattleStore);
 //       this.dailyTotal += this.avgCookSoldEachArray[i];
 //     }
 //   },
-//   render: function () {
-//     for (let i = 0; i < hours.length; i++) {
-//       let li = document.createElement('li');
-//       li.textContent = `${hours[i]}: ${this.getRandomCookPerHour()} cookies`;
-//       seattleList.appendChild(li);
-//     }
-//     let liTotal = document.createElement('li');
-//     liTotal.textContent = `Total: ${this.dailyTotal} cookies`;
-//     seattleList.appendChild(liTotal);
-//   }
 
 // };
 
