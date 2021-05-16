@@ -86,7 +86,7 @@ function opHours() {
   cookieTable.appendChild(thead);
 }
 
-
+//WIP have not figuired out the total footer data.
 function footerTotal() {
   let tfoot = document.createElement('tfoot');
   let tr = document.createElement('tr');
