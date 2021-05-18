@@ -88,7 +88,7 @@ function opHours() {
 
 //WIP have not figuired out the total footer data.
 function footerTotal() {
-  let tfoot = document.createElement('tfoot');
+  let tfoot = document.getElementById('tfoot');
   let tr = document.createElement('tr');
   tfoot.appendChild(tr);
   // let td = document.createElement('td');
