@@ -31,9 +31,11 @@ header {
   width: 50%;
   margin: 25px auto;
   border: 1px solid black;
-  text-align: center;
-  
+  text-align: center;  
+}
 
+#indexHeader{
+  background-color: burlywood;
 }
 
 body {
