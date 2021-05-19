@@ -12,14 +12,15 @@ main {
 table {
 	border-collapse: separate;
   border-spacing: 5px;
-  border: medium solid burlywood;
+  border: medium solid black;
   margin: 25px auto;
 }
 
 th, td {
   padding: 10px;
   border: 1px solid black;
-  border-radius: 5px;;
+  border-radius: 5px;
+  text-align: center;
 }
 
 th {
@@ -30,15 +31,28 @@ th {
 header {
   width: 50%;
   margin: 25px auto;
-  border: 1px solid black;
+  border: 1px solid burlywood;
   text-align: center;  
+  padding: 10px;
 }
 
-#indexHeader{
+/* #indexHeader{ */
   background-color: burlywood;
+}
+
+#theadName{
+  margin: 300px;
 }
 
 body {
   border: 1px solid black;
   min-height: 90%;
 }
+
+
+#locations{
+  border: 1px solid burlywood;
+  text-align: center;
+  padding: 3px;
+}
+
