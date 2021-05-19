@@ -34,6 +34,8 @@ header {
   border: 1px solid burlywood;
   text-align: center;  
   padding: 10px;
+  font-family: 'Rokkitt', serif;
+
 }
 
 #theadName{
@@ -42,7 +44,7 @@ header {
 
 body {
   border: 1px solid black;
-  min-height: 90%;
+  min-height: 90px;
 }
 
 
@@ -50,5 +52,13 @@ body {
   border: 1px solid burlywood;
   text-align: center;
   padding: 3px;
+  max-height: 500px;
 }
 
+#locations ul li{
+  margin: 100px;
+  display: inline-block;
+  line-height: 50px;
+  font-family: 'Ruda', sans-serif;
+  /* border: 1px solid blue; */ /*POL */ 
+}
