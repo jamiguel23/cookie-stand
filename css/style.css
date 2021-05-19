@@ -26,3 +26,17 @@ th {
   background-color: pink;
   font-weight: bold;
 }
+
+header {
+  width: 50%;
+  margin: 25px auto;
+  border: 1px solid black;
+  text-align: center;
+  
+
+}
+
+body {
+  border: 1px solid black;
+  min-height: 90%;
+}
