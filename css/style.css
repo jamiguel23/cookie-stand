@@ -81,3 +81,19 @@ body {
   background-color: burlywood;
 
 }
+
+#img, #aboutUs{
+  border: 3px solid black;
+  background-color: burlywood;
+  text-align: center;
+
+}
+
+img{
+  border: 3px solid black;
+
+}
+
+#homeLink{
+  border: 1px solid salmon;
+}
