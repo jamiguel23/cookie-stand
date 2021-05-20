@@ -28,6 +28,10 @@ th {
   font-weight: bold;
 }
 
+h1, h2{
+  text-align: center;
+}
+
 header {
   width: 50%;
   margin: 25px auto;
@@ -64,8 +68,16 @@ body {
 }
 
 #locations #addy li{
-  max-width: 120px;
+  max-width: 125px;
   text-align: center;
-  margin: 30px;
+  margin: 32px;
   margin-top: auto;
+}
+
+#contact, #hours{
+  border: 3px solid black;
+  padding: 1px;
+  text-align: center;
+  background-color: burlywood;
+
 }
