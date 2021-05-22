@@ -12,6 +12,10 @@ let allStores = [];
 const cookieTable = document.getElementById('cookie-table');
 console.log(cookieTable);
 
+const cookieForm = document.getElementById('form'); //get foothold to sales.HTML using id form
+console.log(cookieForm); //POL
+
+let newStore = [];
 //create constructor notation for all Stores
 function Store(name, min, max, avg) {
   this.name = name;
@@ -118,7 +122,23 @@ function footerTotal() {
   tfoot.appendChild(tr);
 }
 
-console.log(allStores);
+// defining event handler
+function handleSubmit(event){
+  event.preventDefault();
+  //event.target.<name>.value
+  console.log(event.target.name.value);
+  console.log(event.target.min.value);
+  console.log(event.target.max.value);
+  console.log(event.target.avg.value);
+
+  let name = event.target.name.value;
+  let min = event.target.min.value;
+  let max = event.target.max.value;
+  let avg = event.target.avg.value;
+
+  newStore.push([name, min, max, avg]);
+
+}
 
 
 
@@ -134,4 +154,9 @@ new Store('Paris', 20, 38, 2.3);
 new Store('Lima', 2, 16, 4.6);
 
 footerTotal();
+
+
+// added event listener
+
+cookieForm.addEventListener('submit', handleSubmit);
 

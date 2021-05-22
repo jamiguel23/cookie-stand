@@ -19,16 +19,16 @@
             <legend>Enter a new city and values here to see sales projections </legend>
             <fieldset>
              <label for="city">City</label> 
-             <input type="text" id="cityname" name="city">
+             <input type="text" required id="cityname" name="name">
 
              <label for="min">Min Cookie per hour</label> 
-             <input type="number" id="mincookies" name="min">
+             <input type="number" required id="mincookies" name="min">
 
              <label for="max">Max Cookie per hour</label> 
-             <input type="number" id="maxcookies" name="max">
+             <input type="number" required id="maxcookies" name="max">
 
              <label for="avg">Average Cookie per hour</label> 
-             <input type="number" id="avgcookie" name="avg">
+             <input type="number" required step=".1" id="avgcookie" name="avg">
 
             <button type="submit">Submit</button>
 
