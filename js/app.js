@@ -87,24 +87,32 @@ function opHours() {
 }
 
 //WIP have not figuired out the total footer data.
-function footerTotal() {
-  let tfoot = document.getElementById('tfoot');
-  let tr = document.createElement('tr');
-  tfoot.appendChild(tr);
-  // let td = document.createElement('td');
-  let th = document.createElement('th');
-  tfoot.appendChild(th);
-  // td.textContent = this.name;
-  // thead.appendChild(th);
+// function footerTotal() {
+//   let tfoot = document.getElementById('tfoot');
+//   let tr = document.createElement('tr');
+//   tfoot.appendChild(tr);
+//   // let td = document.createElement('td');
+//   let td = document.createElement('td');
+//   tfoot.appendChild(td);
+//   // td.textContent = this.name;
+//   // thead.appendChild(th);
 
-  for (let i = 0; i < hours.length; i++) {
-    th = document.createElement('th');
-    th.textContent = hours[i];
-    tfoot.appendChild(th);
-  }
-}
+//   for (let i = 0; i < hours.length; i++) {
+//     td = document.createElement('td');
+//     // td.textContent = hours[i];
+//     let colTotal = '';
+//     for (let j = 0; j < hours[i]; j++)
+//       colTotal += [j][i];
+//     console.log[j][i];
+//     tfoot.appendChild(td);
+//   }
+// }
 
-footerTotal();
+
+
+
+
+// footerTotal();
 opHours();
 
 
