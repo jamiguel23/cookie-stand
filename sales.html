@@ -14,6 +14,26 @@
             <a href="sales.html">Sales Page</a>    
             <a href="merch.html">Merchandise</a> 
           </header>
+
+          <form id="form">
+            <legend>Enter a new city and values here to see sales projections </legend>
+            <fieldset>
+             <label for="city">City</label> 
+             <input type="text" id="cityname" name="city">
+
+             <label for="min">Min Cookie per hour</label> 
+             <input type="number" id="mincookies" name="min">
+
+             <label for="max">Max Cookie per hour</label> 
+             <input type="number" id="maxcookies" name="max">
+
+             <label for="avg">Average Cookie per hour</label> 
+             <input type="number" id="avgcookie" name="avg">
+
+            <button type="submit">Submit</button>
+
+            </fieldset>
+          </form>
           <table id="cookie-table">
             <thead id="theadName"> Sales Records
               <tr>
