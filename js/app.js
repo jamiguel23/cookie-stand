@@ -7,6 +7,7 @@ console.log('hello');
 // created operation hours variable
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 console.log(hours);
+let allStores = [];
 
 const cookieTable = document.getElementById('cookie-table');
 console.log(cookieTable);
@@ -17,6 +18,7 @@ function Store(name, min, max, avg) {
   this.min = min;
   this.max = max;
   this.avg = avg;
+  allStores.push(this);
   this.avgCookSoldEachArray = [];
   this.dailyTotal = 0;
   this.getRandomCust = function () {
@@ -86,33 +88,42 @@ function opHours() {
   cookieTable.appendChild(thead);
 }
 
-//WIP have not figuired out the total footer data.
-// function footerTotal() {
-//   let tfoot = document.getElementById('tfoot');
-//   let tr = document.createElement('tr');
-//   tfoot.appendChild(tr);
-//   // let td = document.createElement('td');
-//   let td = document.createElement('td');
-//   tfoot.appendChild(td);
-//   // td.textContent = this.name;
-//   // thead.appendChild(th);
 
-//   for (let i = 0; i < hours.length; i++) {
-//     td = document.createElement('td');
-//     // td.textContent = hours[i];
-//     let colTotal = '';
-//     for (let j = 0; j < hours[i]; j++)
-//       colTotal += [j][i];
-//     console.log[j][i];
-//     tfoot.appendChild(td);
-//   }
-// }
+// WIP have not figuired out the total footer data.
+function footerTotal() {
+  let tfoot = document.getElementById('tfoot');
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  td.textContent = 'Hourly Total';
+  tr.appendChild(td);
+  // td.textContent = this.name;
+  // thead.appendChild(th);
+  let grandTotal = 0;
+
+  for (let i = 0; i < hours.length; i++) {
+    let colTotal = 0;
+    let td = document.createElement('td');
+    for (let j = 0; j < allStores.length; j++) {
+      colTotal += allStores[j].avgCookSoldEachArray[i];
+
+    }
+    td.textContent = colTotal;
+    tr.appendChild(td);
+    grandTotal += colTotal;
+
+  }
+  td = document.createElement('td');
+  td.textContent = grandTotal;
+  tr.appendChild(td);
+  tfoot.appendChild(tr);
+}
+
+console.log(allStores);
 
 
 
 
 
-// footerTotal();
 opHours();
 
 
@@ -122,4 +133,5 @@ new Store('Dubai', 11, 38, 3.7);
 new Store('Paris', 20, 38, 2.3);
 new Store('Lima', 2, 16, 4.6);
 
+footerTotal();
 
