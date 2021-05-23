@@ -9,6 +9,8 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 console.log(hours);
 let allStores = [];
 
+let tfoot = document.getElementById('tfoot');
+
 const cookieTable = document.getElementById('cookie-table');
 console.log(cookieTable);
 
@@ -132,15 +134,16 @@ function handleSubmit(event){
   console.log(event.target.avg.value);
 
   let name = event.target.name.value;
-  let min = event.target.min.value;
-  let max = event.target.max.value;
-  let avg = event.target.avg.value;
+  let min = +event.target.min.value;
+  let max = +event.target.max.value;
+  let avg = +event.target.avg.value;
 
+  tfoot.innerHTML = '';
   newStore.push([name, min, max, avg]);
 
+  new Store(name, min, max, avg);
+  footerTotal();
 }
-
-
 
 
 
