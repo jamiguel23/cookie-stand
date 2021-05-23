@@ -14,12 +14,32 @@
             <a href="sales.html">Sales Page</a>    
             <a href="merch.html">Merchandise</a> 
           </header>
+
+          <form id="form">
+            <legend>Enter a new city and values here to see sales projections </legend>
+            <fieldset>
+             <label for="city">City</label> 
+             <input type="text" required id="cityname" name="name">
+
+             <label for="min">Min Cookie per hour</label> 
+             <input type="number" required id="mincookies" name="min">
+
+             <label for="max">Max Cookie per hour</label> 
+             <input type="number" required id="maxcookies" name="max">
+
+             <label for="avg">Average Cookie per hour</label> 
+             <input type="number" required step=".1" id="avgcookie" name="avg">
+
+            <button type="submit">Submit</button>
+
+            </fieldset>
+          </form>
           <table id="cookie-table">
             <thead id="theadName"> Sales Records
               <tr>
               </tr>
             </thead>  
-            <tfoot id="tfoot">  </tfoot>
+            <tfoot id="tfoot"></tfoot>
           </table>
     <footer> 
         &copy 2021 JM Miguel

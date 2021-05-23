@@ -96,3 +96,7 @@ img{
 #homeLink{
   border: 1px solid salmon;
 }
+
+form {
+  border: 1px solid burlywood;
+}
