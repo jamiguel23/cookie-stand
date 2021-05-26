@@ -1,6 +1,7 @@
 * {
   margin: 30px;
   background-color: salmon;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 main {
@@ -40,7 +41,8 @@ header {
   border: 1px solid burlywood;
   text-align: center;  
   padding: 10px;
-  font-family: 'Rokkitt', serif;
+  color: blue;
+  font-family: 'Rokkitt', 'Times New Roman' serif;
 
 }
 
@@ -65,7 +67,8 @@ body {
   margin: 50px;
   display: inline-block;
   line-height: 50px;
-  font-family: 'Ruda', sans-serif;
+  color: bisque;
+  font-family: 'Ruda', 'Arial' sans-serif;
 }
 
 #locations #addy li{
