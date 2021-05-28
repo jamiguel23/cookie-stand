@@ -54,7 +54,7 @@ Store.prototype.render = function () {
 
   for (let i = 0; i < this.avgCookSoldEachArray.length; i++) {
     let td = document.createElement('td');
-    td.textContent = this.avgCookSoldEachArray[i];
+    td.textContent = this.avgCookSoldEachArray[i]; 
     tr.appendChild(td);
   }
   td = document.createElement('td');
@@ -124,6 +124,10 @@ function handleSubmit(event){
 
   new Store(name, min, max, avg);
   footerTotal();
+  event.target.name.value ='';
+  event.target.min.value ='';
+  event.target.max.value ='';
+  event.target.avg.value ='';
 }
 
 
